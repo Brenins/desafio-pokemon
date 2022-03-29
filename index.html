@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="./script.js"></script>
+    <title>Pokedex</title>
+</head>
+<body>
+    <header class="pesquisa">
+        <h1 onclick="reload()">Pokedex</h1>
+        <input type="text" id="txtBusca"class="form-control w-50" class="w-100" placeholder="Pesquise aqui seu Pokemon..."/>
+        <button class="btn btn-light" type="button" onclick="fetchPokemon()" id="botaoPesquisa">Pesquisar</button>
+        <button class="btn btn-light" type="button" id="botaoMeusPokemons">Pokemons Capturados</button>
+    </header>
+    <div class="container">
+        <ul data-js="pokedex" class="pokedex"></ul>
+    </div>
+</body>
+</html>
