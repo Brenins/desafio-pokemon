@@ -79,7 +79,7 @@ h1 {
 
 .electric {
 	background-color: #FCF7DE;
-    border-radius: 2rem;
+    border-radius: 100rem;
 }
 
 .water, .ice {
@@ -133,8 +133,8 @@ h1 {
 .card-title {
 	text-transform: capitalize;
 	margin-bottom: 0px;
-	font-size: 32px;
-	font-weight: normal;
+	font-size: 38px;
+	font-weight: bold;
 	position: relative;
 	z-index: 2;
 }
