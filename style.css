@@ -4,9 +4,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.tamanho{
+	width: 500px;
+}
 
-
-
+body{
+	background-color: lightcoral;
+}
 
 .pesquisa{
     width: auto;
@@ -14,18 +18,30 @@
     background-color: #E4D1B9;
 }
 
+
+.botoes{
+	width: auto;
+	display:flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.teste{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 .pesquisa{
     display: flex;
+	flex-direction: row;
     align-items:center;
     justify-content: space-evenly;
 }
 
-
 #txtBusca{
     margin-right: 10px;
 } 
-
-
 
 .container {
     width: auto;
@@ -42,19 +58,14 @@ h1 {
 	font-size: 54px;
 }
 
-
 .pokedex{
     display: flex;
 	flex-direction: column;
-    justify-content:center;
-    align-items: center;
+    justify-content: start;
     text-align: center;
-    padding: 20px;
     width: auto;
     height: 380px;
 }
-
-
 
 .card {
 	list-style: none;
@@ -62,91 +73,104 @@ h1 {
 	border-radius: 180px;
     width: 256px;
     height: 256px;
-    border-style: groove;
-    border-width: 1px;
-	border-color: lightseagreen;
+    border-style: none;
+   
 }
+
 .card{
 	display: flex;
 	flex-direction: column;
 	justify-content:space-between;
 }
 
-
 .steel {
 	background-color: #f4f4f4;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .fire {
 	background-color: #FDDFDF;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .grass {
 	background-color: #DEFDE0;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .electric {
 	background-color: #FCF7DE;
-    border-radius: 100rem;
+    border-radius: 6rem;
 	margin-bottom: 15px;
 }
 
 .water, .ice {
 	background-color: #DEF3FD;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .ground {
 	background-color: #f4e7da;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .rock {
 	background-color: #d5d5d4;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .fairy {
 	background-color: #fceaff;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .poison {
 	background-color: #98d7a5;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .bug {
 	background-color: #f8d5a3;
-    border-radius: 100rem;
+	border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .dragon {
 	background-color: #97b3e6;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .psychic {
 	background-color: #eaeda1;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .flying {
 	background-color: #F5F5F5;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .fighting {
 	background-color: #E6E0D4;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .normal {
 	background-color: #F5F5F5;
-    border-radius: 100rem;
+    border-radius: 6rem;
+	margin-bottom: 15px;
 }
 
 .card:hover {
@@ -164,7 +188,7 @@ h1 {
 }
 
 .card-subtitle {
-	margin-top: 10px;
+	margin-top: 5px;
     margin-bottom: 10px;
 	color: #666;
 	font-weight: 300;
@@ -179,10 +203,7 @@ h1 {
 .card-image {
 	height: 256px;
     width: 256px;
-    border-radius: 2rem;
-	background-color: red;
 }
-
 
 @media screen and (max-width: 501px)
 {
@@ -194,14 +215,25 @@ h1 {
 		height: 150px;
 
 	}
+
+	.teste{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.botoes{
+		margin-top: 5px;
+		width: 405px;
+		display:flex;
+		flex-direction: row;
+		justify-content: start;
+	}
+	.tamanho{
+		width: 300px;
+	}
 	
 }
-
-
-
-
-
-
 
 @keyframes bounce {
 	20% {

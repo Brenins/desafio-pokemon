@@ -14,16 +14,17 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <header class="pesquisa">
-        <h3 onclick="reload()">Pokedex do Py</h3>
-        <input type="text" id="txtBusca"class="form-control w-50 border-0 rounded-pill"  placeholder="Pesquise aqui seu Pokemon..."/>
-        <div class="botoes">
-            <button class="btn btn-light border-0 rounded-pill" type="button" onclick="fetchPokemon()" id="botaoPesquisa">Pesquisar</button>
-            <button class="btn btn-light border-0 rounded-pill" type="button" id="botaoMeusPokemons">Meus Pokemons</button>
+    <header class="pesquisa shadow p-3 mb-5 bg-danger rounded">    <!-- Barra de pesquisa e botoes -->
+        <h3 class="text-light" onclick="reload()">Pokedex do Py</h3>
+        <div class="teste">
+            <input type="text" id="txtBusca"class="form-control tamanho border-0 rounded-pill shadow"  placeholder="Pesquise aqui seu Pokemon..."/>
+            <button class="btn btn-light border-0 rounded-pill shadow" type="button" onclick="fetchPokemon()" id="botaoPesquisa">Pesquisar</button>
         </div>
-        
+        <div class="botoes">
+            <button class="btn btn-light border-0 rounded-pill shadow" type="button" id="botaoMeusPokemons">Meus Pokemons</button>
+        </div>
     </header>
-    <div class="container">
+    <div class="container">  <!-- Card dos pokemons carregados via API -->
         <ul data-js="pokedex" class="pokedex"></ul>
     </div>
 </body>
