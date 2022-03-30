@@ -25,7 +25,7 @@
 
 .container {
     width: 500px;
-    height: 10vh;
+    height: 80vh;
 	margin: 0 auto;
 }
 
@@ -37,13 +37,13 @@ h1 {
 
 .pokedex{
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     text-align: center;
-    border-radius: 2rem;
-    padding: 40px;
-    width: 512px;
-    height: 512px;
+    margin-top: -30px;
+    padding: 20px;
+    width: 480px;
+    height: 480px;
 }
 
 /*
@@ -57,24 +57,28 @@ h1 {
 .card {
 	list-style: none;
 	color: #222;
-	text-align: center;
-	border-radius: 20px;
-	position: relative;
+	text-align:center;
+	border-radius: 180px;
     width: 256px;
     height: 256px;
+    border-style: dotted;
+    border-width: 2px;
 }
 
 
 .steel {
 	background-color: #f4f4f4;
+    border-radius: 100rem;
 }
 
 .fire {
 	background-color: #FDDFDF;
+    border-radius: 100rem;
 }
 
 .grass {
 	background-color: #DEFDE0;
+    border-radius: 100rem;
 }
 
 .electric {
@@ -84,46 +88,57 @@ h1 {
 
 .water, .ice {
 	background-color: #DEF3FD;
+    border-radius: 100rem;
 }
 
 .ground {
 	background-color: #f4e7da;
+    border-radius: 100rem;
 }
 
 .rock {
 	background-color: #d5d5d4;
+    border-radius: 100rem;
 }
 
 .fairy {
 	background-color: #fceaff;
+    border-radius: 100rem;
 }
 
 .poison {
 	background-color: #98d7a5;
+    border-radius: 100rem;
 }
 
 .bug {
 	background-color: #f8d5a3;
+    border-radius: 100rem;
 }
 
 .dragon {
 	background-color: #97b3e6;
+    border-radius: 100rem;
 }
 
 .psychic {
 	background-color: #eaeda1;
+    border-radius: 100rem;
 }
 
 .flying {
 	background-color: #F5F5F5;
+    border-radius: 100rem;
 }
 
 .fighting {
 	background-color: #E6E0D4;
+    border-radius: 100rem;
 }
 
 .normal {
 	background-color: #F5F5F5;
+    border-radius: 100rem;
 }
 
 .card:hover {
@@ -133,16 +148,17 @@ h1 {
 .card-title {
 	text-transform: capitalize;
 	margin-bottom: 0px;
-	font-size: 38px;
+	font-size: 36px;
 	font-weight: bold;
 	position: relative;
 	z-index: 2;
 }
 
 .card-subtitle {
-	margin-top: 5px;
+	margin-top: 10px;
+    margin-bottom: 10px;
 	color: #666;
-	font-weight: lighter;
+	font-weight: 300;
 	position: relative;
 	z-index: 2;
 }
