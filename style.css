@@ -4,10 +4,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
+
+
+
+
 .pesquisa{
     width: auto;
     height: 60px;
-    background-color: #3B4CCA;
+    background-color: #E4D1B9;
 }
 
 .pesquisa{
@@ -24,9 +28,13 @@
 
 
 .container {
-    width: 500px;
-    height: 80vh;
+    width: auto;
+    height: 50vh;
 	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
 }
 
 h1 {
@@ -37,32 +45,31 @@ h1 {
 
 .pokedex{
     display: flex;
+	flex-direction: column;
     justify-content:center;
     align-items: center;
     text-align: center;
-    margin-top: -30px;
     padding: 20px;
-    width: 480px;
-    height: 480px;
+    width: auto;
+    height: 380px;
 }
 
-/*
-.pokedex {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	grid-gap: 20px;
-	padding-inline-start: 0;
-}*/
+
 
 .card {
 	list-style: none;
-	color: #222;
 	text-align:center;
 	border-radius: 180px;
     width: 256px;
     height: 256px;
-    border-style: dotted;
-    border-width: 2px;
+    border-style: groove;
+    border-width: 1px;
+	border-color: lightseagreen;
+}
+.card{
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
 }
 
 
@@ -84,6 +91,7 @@ h1 {
 .electric {
 	background-color: #FCF7DE;
     border-radius: 100rem;
+	margin-bottom: 15px;
 }
 
 .water, .ice {
@@ -152,6 +160,7 @@ h1 {
 	font-weight: bold;
 	position: relative;
 	z-index: 2;
+	
 }
 
 .card-subtitle {
@@ -161,15 +170,38 @@ h1 {
 	font-weight: 300;
 	position: relative;
 	z-index: 2;
+	border:lightslategrey;
+	border-width: 2px;
+	border-radius: 2rem;
+	border-style:solid;
 }
 
 .card-image {
 	height: 256px;
-	position: relative;
     width: 256px;
     border-radius: 2rem;
-	z-index: 2;
+	background-color: red;
 }
+
+
+@media screen and (max-width: 501px)
+{
+	.pesquisa{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: auto;
+		height: 150px;
+
+	}
+	
+}
+
+
+
+
+
+
 
 @keyframes bounce {
 	20% {
