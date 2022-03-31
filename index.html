@@ -17,11 +17,11 @@
     <header class="pesquisa shadow p-3 mb-5 bg-danger rounded">    <!-- Barra de pesquisa e botoes -->
         <h3 class="text-light" onclick="reload()">Pokedex do Py</h3>
         <div class="teste">
-            <input type="text" id="txtBusca"class="form-control tamanho border-0 rounded-pill shadow"  placeholder="Pesquise aqui seu Pokemon..."/>
-            <button class="btn btn-light border-0 rounded-pill shadow" type="button" onclick="fetchPokemon()" id="botaoPesquisa">Pesquisar</button>
+            <input type="text" id="txtBusca"class="form-control tamanho border-0 rounded-pill shadow"  placeholder="Digite o nome ou Id do Pokemon..."/>
+            <button class="btn btn-light border-0 rounded-pill shadow bg-primary p-2 text-white bg-opacity-75" type="button" onclick="fetchPokemon()" id="botaoPesquisa">Pesquisar</button>
         </div>
         <div class="botoes">
-            <button class="btn btn-light border-0 rounded-pill shadow" type="button" id="botaoMeusPokemons">Meus Pokemons</button>
+            <button class="btn btn-light border-0 rounded-pill shadow bg-success p-2 text-white bg-opacity-75" type="button" id="botaoMeusPokemons">Meus Pokemons</button>
         </div>
     </header>
     <div class="container">  <!-- Card dos pokemons carregados via API -->

@@ -15,16 +15,27 @@ const fetchPokemon = () =>{
             const lisPokemons = pokemons.reduce((accumulator, pokemon)=>{
             const types = pokemon.types.map(typeInfo => typeInfo.type.name); //Array trazido da api pela funcio MAP, funcionando tipo While.
             const habilidade = pokemon.abilities.map(abilitiesInfo => abilitiesInfo.ability.name)
+            const status = pokemon.stats.map(statusInfo => statusInfo.base_stat)
                 accumulator += `
                     <li class="card shadow-lg">
                         <img class="card-img ${types[0]} " alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
                         <h2 class="card-title">${pokemon.id}. ${pokemon.name}</h2>
-                        <h5 class="card-subtitle ${types[0]}">
+                        <h5 class="card-subtitle ${types[0]} shadow-lg">
                             Tipo: ${types.join('|')}
                             <br/>
                             Habilidades: ${habilidade.join(' | ')}
+                            <br/>
+                            HP: +${status[0]}
+                            <br/>
+                            Ataque: ${status[1]}
+                            <br/>
+                            Defesa: ${status[2]}
+                            <br/>
+                            Velocidade: ${status[5]}Km/h
                             </h5>
-                        <button class="btn btn-primary border-0 rounded-pill shadow-lg" type="button" id="captura" onclick="capturar('${pokemon.name}')">Capturar</button>
+                        <button class="btn btn-success border-0 rounded-pill shadow-lg" type="button" id="captura" onclick="capturar('${pokemon.name}')">Capturar</button>
+                        <br>
+                        <button class="btn btn-primary border-0 rounded-pill shadow-lg" type="button" id="evoluir"')   onclick="erroEvolucao()">Evoluir</button>
                     </li>
                 `
                 return accumulator
@@ -47,5 +58,15 @@ function capturar(nomePokemon){
         title: `Você capturou o ${nomePokemon}`,
         showConfirmButton: false,
         timer: 1500
+      })
+}
+
+function erroEvolucao(){
+    Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `Função não disponivel no momento!!!`,
+        showConfirmButton: false,
+        timer: 2000
       })
 }
