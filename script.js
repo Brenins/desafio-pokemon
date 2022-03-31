@@ -1,10 +1,10 @@
 //Função principal que permite a conexao com a api atraves do metodo FETCH-API.
 const fetchPokemon = () =>{
-
+    
     var pesquisa = document.getElementById("txtBusca").value;
     pesquisa.toString;//Transforma o elemento da barrinha em string para que a api consiga ler normalmente.
-    const getPokemonUrl = name => `https://pokeapi.co/api/v2/pokemon/${name}`
-    const pokemonPromises = []
+    const getPokemonUrl = name => `https://pokeapi.co/api/v2/pokemon/${name}`;
+    const pokemonPromises = [];
 
     //Retorno de dados via promessa de conexão pela api através do FETCH.
     pokemonPromises.push(fetch(getPokemonUrl(pesquisa)).then(response => response.json()))
@@ -14,11 +14,12 @@ const fetchPokemon = () =>{
         .then(pokemons =>{
             const lisPokemons = pokemons.reduce((accumulator, pokemon)=>{
             const types = pokemon.types.map(typeInfo => typeInfo.type.name); //Array trazido da api pela funcio MAP, funcionando tipo While.
-            const habilidade = pokemon.abilities.map(abilitiesInfo => abilitiesInfo.ability.name)
-            const status = pokemon.stats.map(statusInfo => statusInfo.base_stat)
+            const habilidade = pokemon.abilities.map(abilitiesInfo => abilitiesInfo.ability.name);
+            const status = pokemon.stats.map(statusInfo => statusInfo.base_stat);
                 accumulator += `
                     <li class="card shadow-lg">
-                        <img class="card-img ${types[0]} " alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
+                        <img class="card-img ${types[0]} " alt="${pokemon.name}" 
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
                         <h2 class="card-title">${pokemon.id}. ${pokemon.name}</h2>
                         <h5 class="card-subtitle ${types[0]} shadow-lg">
                             Tipo: ${types.join('|')}
@@ -33,9 +34,15 @@ const fetchPokemon = () =>{
                             <br/>
                             Velocidade: ${status[5]}Km/h
                             </h5>
-                        <button class="btn btn-success border-0 rounded-pill shadow-lg" type="button" id="captura" onclick="capturar('${pokemon.name}')">Capturar</button>
+                        <button class="btn btn-success 
+                        border-0 rounded-pill shadow-lg" 
+                        type="button" id="captura" 
+                        onclick="capturar('${pokemon.name}')">Capturar</button>
                         <br>
-                        <button class="btn btn-primary border-0 rounded-pill shadow-lg" type="button" id="evoluir"')   onclick="erroEvolucao()">Evoluir</button>
+                        <button class="btn btn-primary 
+                        border-0 rounded-pill 
+                        shadow-lg" type="button" id="evoluir"') 
+                        onclick="erroEvolucao()">Evoluir</button>
                     </li>
                 `
                 return accumulator
@@ -52,21 +59,12 @@ function reload(){
 
 //Menuzinho de aviso de captura do pokemon.
 function capturar(nomePokemon){
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: `Você capturou o ${nomePokemon}`,
-        showConfirmButton: false,
-        timer: 1500
-      })
+    Swal.fire({ position: 'center',icon: 'success',
+    title: `Você capturou o ${nomePokemon}`,showConfirmButton: false,timer: 1500})
 }
 
 function erroEvolucao(){
-    Swal.fire({
-        position: 'center',
-        icon: 'error',
+    Swal.fire({position: 'center',icon: 'error',
         title: `Função não disponivel no momento!!!`,
-        showConfirmButton: false,
-        timer: 2000
-      })
+        showConfirmButton: false,timer: 2000})
 }
