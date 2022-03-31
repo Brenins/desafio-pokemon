@@ -18,7 +18,7 @@ const fetchPokemon = () =>{
             const status = pokemon.stats.map(statusInfo => statusInfo.base_stat);
                 accumulator += `
                     <li class="card shadow-lg">
-                        <img class="card-img ${types[0]} " alt="${pokemon.name}" 
+                        <img class="card-image ${types[0]} " alt="${pokemon.name}" 
                         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
                         <h2 class="card-title">${pokemon.id}. ${pokemon.name}</h2>
                         <h5 class="card-subtitle ${types[0]} shadow-lg">
@@ -34,15 +34,20 @@ const fetchPokemon = () =>{
                             <br/>
                             Velocidade: ${status[5]}Km/h
                             </h5>
-                        <button class="btn btn-success 
-                        border-0 rounded-pill shadow-lg" 
-                        type="button" id="captura" 
-                        onclick="capturar('${pokemon.name}')">Capturar</button>
+
+
+                        <div class="tamanho2">
+                            <button class="btn btn-success 
+                            border-0 rounded-pill shadow-lg t3" 
+                            type="button" id="captura" 
+                            onclick="capturar('${pokemon.name}')">Capturar</button>
+                            <br>
+                            <button class="btn btn-primary 
+                            border-0 rounded-pill 
+                            shadow-lg t3" type="button" id="evoluir"') 
+                            onclick="erroEvolucao()">Evoluir</button>
+                        </div>
                         <br>
-                        <button class="btn btn-primary 
-                        border-0 rounded-pill 
-                        shadow-lg" type="button" id="evoluir"') 
-                        onclick="erroEvolucao()">Evoluir</button>
                     </li>
                 `
                 return accumulator
@@ -52,15 +57,38 @@ const fetchPokemon = () =>{
         })
 }
 
+
+
+function salvar(){
+    var novaListaPokemon = document.getElementById("txtBusca").value;
+
+    if(localStorage.getItem('pokemons') == null){
+        localStorage.setItem('pokemons','[]');
+    }
+
+    var antigaLisPokemon = JSON.parse(localStorage.getItem('pokemons'));
+    antigaLisPokemon.push(novaListaPokemon);
+    localStorage.setItem('pokemons',JSON.stringify(antigaLisPokemon));
+
+    const pull=JSON.parse(localStorage.getItem('pokemons','[]'))
+   reload(pull[3]);
+}
+
+
+
+
+
+
 //função de reload teste.
-function reload(){
-    location.reload();
+function reload(batata){
+    alert(batata)
 }
 
 //Menuzinho de aviso de captura do pokemon.
 function capturar(nomePokemon){
     Swal.fire({ position: 'center',icon: 'success',
     title: `Você capturou o ${nomePokemon}`,showConfirmButton: false,timer: 1500})
+    salvar();
 }
 
 function erroEvolucao(){

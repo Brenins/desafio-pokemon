@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="pesquisa shadow p-3 mb-5 bg-danger rounded">    <!-- Barra de pesquisa e botoes -->
-        <h3 class="text-light">Pokedex do PY</h3>
+        <h3 class="text-light" onclick="reload()">Pokedex do PY</h3>
         <div class="teste">
             <input type="text" id="txtBusca"
             class="form-control tamanho border-0 rounded-pill shadow"  
@@ -27,6 +27,7 @@
             type="button" onclick="fetchPokemon()" 
             id="botaoPesquisa">Pesquisar</button>
         </div>
+        
         <div class="botoes">
             <button class="btn btn-light 
             border-0 rounded-pill 
@@ -34,6 +35,7 @@
             type="button" id="botaoMeusPokemons">Meus Pokemons</button>
         </div>
     </header>
+    <h2 class="bagulho"></h2>
     <div class="container">  <!-- Card dos pokemons carregados via API -->
         <ul data-js="pokedex" class="pokedex"></ul>
     </div>
