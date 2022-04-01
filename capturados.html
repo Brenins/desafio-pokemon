@@ -11,19 +11,16 @@
     <link rel="icon" type="image/x-icon" href="https://user-images.githubusercontent.com/9741252/81717987-83b84000-947b-11ea-9ac9-5ad1d59adf7a.png">
     <link href="style_capturados.css" rel="stylesheet" >
     <script src="./script.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
     <title>Pokedex</title>
 </head>
 <body>
-    <script>fetchCapturados()</script>
     <header class="shadow p-3 mb-5 bg-danger rounded">    <!-- Barra de pesquisa e botoes -->
-        <h1>POKE-PY</h1>
-        <h1>Meus Pokemons</h1>
-        <button class="btn btn-light border-0 
-            rounded-pill shadow 
-            bg-primary p-2 text-white bg-opacity-75" 
-            type="button" 
-            id="botaoPesquisa">Home</button>
+        <h3 class="text-light">Pokedex do PY</h3>
+        <h1 class="text-light">Meus Pokemons</h1><script>fetchCapturados()</script>
+        <a href="./index.html" class="btn btn-light 
+            border-0 rounded-pill 
+            shadow bg-warning p-2 text-white bg-opacity-75">Pagina de Pesquisa</a>
     </header>
     <div class="container">  <!-- Card dos pokemons carregados via API -->
         <ul data-js="pokedex" class="pokedex"></ul>

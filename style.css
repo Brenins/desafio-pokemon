@@ -11,7 +11,8 @@
 
 
 body{
-	background-color: lightcoral;
+	background: #EFEFBB;
+	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
 }
 
 .pesquisa{
@@ -46,9 +47,9 @@ body{
 } 
 
 .container {
+	margin-top: 130px;
     width: auto;
-    height: 40vh;
-	margin: 0 auto;
+    height: 10vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
@@ -57,7 +58,7 @@ body{
 
 h1 {
 	text-align: center;
-	font-size: 54px;
+	font-size: 36px;
 }
 
 .pokedex{
@@ -72,7 +73,7 @@ h1 {
 .card {
 	list-style: none;
 	text-align:center;
-	border-radius: 180px;
+	border-radius: 2rem;
     border-style: none;
 	width: 256px;
 	height: 256px;
@@ -189,9 +190,8 @@ h1 {
 
 .card-title {
 	text-transform:capitalize;
-	margin-bottom: 0px;
-	font-size: 36px;
-	font-weight: bold;
+	font-size: 34px;
+	font-weight:300;
 	position: relative;
 	z-index: 2;
 	
@@ -219,7 +219,6 @@ h1 {
 	margin-right: 5px;
 
 }
-
 
 .tamanho2{
 	width: auto;
