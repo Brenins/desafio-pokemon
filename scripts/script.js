@@ -54,7 +54,6 @@ const fetchPokemon = () =>{
         })
 }
 
-
 const fetchCapturados = () =>{
     const getPokemonUrl = name =>`https://pokeapi.co/api/v2/pokemon/${name}`;
 
@@ -66,15 +65,14 @@ const fetchCapturados = () =>{
         nome.toString;
         capturadosPromises.push(fetch(getPokemonUrl(nome)).then(response => response.json()))
     }
+
     Promise.all(capturadosPromises)
         .then(capturados =>{
             var lisCapturados = capturados.reduce((accumulator, capturados)=>{
                 const types = capturados.types.map(typeInfo => typeInfo.type.name)
-                var numero = contador();
-                var nome = capturados.name;
                 accumulator += `<li class="card ${types[0]} shadow-lg">
                     <img class="card-image  alt="${capturados.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${capturados.id}.png" />
-                    <h2 class="card-title">N°${numero}  ${capturados.name}</h2>
+                    <h2 class="card-title">N°${capturados.id}  ${capturados.name}</h2>
                     <button class="btn btn-light border-0 
                     rounded-pill shadow 
                     bg-primary p-2 text-white bg-opacity-75" 
@@ -89,33 +87,21 @@ const fetchCapturados = () =>{
         })
 }
 
-
 function salvar(){
     var novaListaPokemon = document.getElementById("txtBusca").value;
 
     if(localStorage.getItem('pokemons') == null){
         localStorage.setItem('pokemons','[]');
     }
-
     var antigaLisPokemon = JSON.parse(localStorage.getItem('pokemons'));
     antigaLisPokemon.push(novaListaPokemon);
     localStorage.setItem('pokemons',JSON.stringify(antigaLisPokemon));
-
-
-}
-
-
-var num = 0;
-function contador(){
-    num++;
-    return num;
 }
 
 function liberar(nome){
     const pull= JSON.parse(localStorage.getItem('pokemons',''))
     const listaAtual = [];
 
-    const novaLista = []
     for( let i = 0; i < pull.length; i++){
         listaAtual.push(pull[i]);
     }
@@ -128,20 +114,18 @@ function liberar(nome){
         localStorage.setItem('pokemons','');
         localStorage.setItem('pokemons',JSON.stringify(listaAtual));
     }
+    soltar(nome);
+}
 
+function soltar(nomePokemon){
+    Swal.fire({ position: 'center',icon: 'warning',
+    title: `Você libertou o ${nomePokemon}`,showConfirmButton: true,})
     fetchCapturados();
 }
 
-
-//função de reload teste.
-function reload(batata){
-    alert(batata)
-}
-
-//Menuzinho de aviso de captura do pokemon.
 function capturar(nomePokemon){
     Swal.fire({ position: 'center',icon: 'success',
-    title: `Você capturou o ${nomePokemon}`,showConfirmButton: false,timer: 1500})
+    title: `Você capturou o ${nomePokemon}`,showConfirmButton: true,})
     salvar();
 }
 
